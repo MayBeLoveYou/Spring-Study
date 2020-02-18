@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+    <!--使用Spring来创建对象，在Spring这些都称为Bean
+
+        id：变量名
+        class：所属类名
+        property：对象中的属性赋值
+
+        注：在实体类中必须有set方法才能给属性赋值
+    -->
+    <bean id="mysqlImpl" class="ustc.wzh.dao.UserDaoMySqlImpl"></bean>
+    <bean id="oracleImpl" class="ustc.wzh.dao.UserDaoOracleImpl"></bean>
+    <bean id="userServiceImpl" class="ustc.wzh.service.UserServiceImpl">
+        <!--
+            ref：用于引用Spring容器创建好了的对象
+            value：具体的值，用于基本类型
+        -->
+        <property name="userDao" ref="mysqlImpl"></property>
+    </bean>
+
+
+</beans>

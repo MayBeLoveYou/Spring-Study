@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!--namespace用于绑定一个对应的Dao/Mapper接口-->
+<mapper namespace="ustc.wzh.mapper.UserMapper">
+
+    <!--select查询语句 id绑定函数名 resultType绑定返回类型-->
+    <select id="selectUser" resultType="user">
+      select * from mybatis.user;
+    </select>
+
+    <insert id="addUser" parameterType="user">
+        insert into mybatis.user (id, name, pwd) value (#{id},#{name},#{pwd});
+    </insert>
+
+    <delete id="deleteUser" parameterType="_int">
+        delete from mybatis.user where id = #{id};
+    </delete>
+</mapper>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+    <!--使用Spring来创建对象，在Spring这些都称为Bean
+
+        id：变量名
+        class：所属类名
+        property：对象中的属性赋值
+
+        注：在实体类中必须有set方法才能给属性赋值
+    -->
+    <bean id="user" class="ustc.wzh.pojo.User">
+        <property name="name" value="无参构造用户"></property>
+    </bean>
+
+
+
+    <!-- 第一种根据index参数下标设置 -->
+    <bean id="userT" class="ustc.wzh.pojo.UserT">
+        <!-- index指构造方法 , 下标从0开始 -->
+        <constructor-arg index="0" value="有参索引构造用户"/>
+    </bean>
+
+    <!-- 第二种根据参数名字设置 -->
+    <!--<bean id="userT" class="ustc.wzh.pojo.UserT">-->
+        <!--&lt;!&ndash; name指参数名 &ndash;&gt;-->
+        <!--<constructor-arg name="name" value="有参属性名字构造用户"/>-->
+    <!--</bean>-->
+
+    <!-- 第三种根据参数类型设置 -->
+    <!--<bean id="userT" class="ustc.wzh.pojo.UserT">-->
+        <!--<constructor-arg type="java.lang.String" value="有参参数类型构造用户"/>-->
+    <!--</bean>-->
+
+</beans>

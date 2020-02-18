@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="address" class="ustc.wzh.pojo.Address">
+        <property name="address" value="合肥"></property>
+    </bean>
+
+    <bean id="student" class="ustc.wzh.pojo.Student">
+        <!--1.普通值注入,value-->
+        <property name="name" value="小王"></property>
+        <!--2.Bean对象注入,ref-->
+        <property name="address" ref="address"></property>
+        <!--3.数组注入,array,value-->
+        <property name="books">
+            <array>
+                <value>语文</value>
+                <value>数学</value>
+                <value>英语</value>
+                <value>科学</value>
+            </array>
+        </property>
+        <!--4.list注入,list,value-->
+        <property name="hobbys">
+            <list>
+                <value>写代码</value>
+                <value>看动漫</value>
+                <value>看电影</value>
+                <value>打篮球</value>
+            </list>
+        </property>
+        <!--5.map注入,map,entry,key,value-->
+        <property name="card">
+            <map>
+                <entry key="身份证" value="12131231321"></entry>
+                <entry key="学生证" value="45644654646"></entry>
+                <entry key="银行卡" value="79797979797"></entry>
+            </map>
+        </property>
+        <!--6.set注入,set,value-->
+        <property name="games">
+            <set>
+                <value>LOL</value>
+                <value>COC</value>
+                <value>BOB</value>
+            </set>
+        </property>
+        <!--7.null注入,null（注意空值“”和null不同）-->
+        <property name="wife">
+            <null></null>
+        </property>
+        <!--8.Properties注入,props,prop,key-->
+        <property name="info">
+            <props>
+                <prop key="学号">123456789</prop>
+                <prop key="性别">男</prop>
+                <prop key="姓名">小王</prop>
+            </props>
+        </property>
+    </bean>
+
+
+</beans>

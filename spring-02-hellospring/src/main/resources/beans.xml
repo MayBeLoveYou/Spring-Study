@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+    <!--使用Spring来创建对象，在Spring这些都称为Bean
+
+        id：变量名
+        class：所属类名
+        property：对象中的属性赋值
+
+        注：在实体类中必须有set方法才能给属性赋值
+    -->
+    <bean id="hello" class="ustc.wzh.pojo.Hello">
+        <property name="str" value="你好"></property>
+    </bean>
+
+
+</beans>
